@@ -253,6 +253,17 @@
               </ul>
           </li>
           <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#show" class="toc-h2 toc-link" data-title="show">show</a>
+                  </li>
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="create">create</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -491,6 +502,92 @@ Remember — a happy kitten is an authenticated kitten!
 <td>ID</td>
 <td>Yes</td>
 <td>The ID of the user to update</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='show'>show</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/products/1"</span>
+  -H <span class="s2">"Authorization: Bearer TOKEN"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toy 101"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count_on_hand"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific product.</p>
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.talkpal.com/products/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Yes</td>
+<td>The ID of the product to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create'>create</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
+     -F <span class="s2">"image[name]=toy"</span> <span class="se">\</span>
+     -F <span class="s2">"image[images][]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg"</span> <span class="se">\</span>
+     -H <span class="s2">"Authorization: Bearer TOKEN"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toy 101"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"count_on_hand"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a product.</p>
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/products</code></p>
+<h3 id='product-parameters'>Product Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>product name</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>prodct price</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Yes</td>
+<td>currency</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>

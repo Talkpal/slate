@@ -228,27 +228,13 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="get-all-kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="get-a-specific-kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="delete-a-specific-kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#users" class="toc-h1 toc-link" data-title="users">Users</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-a-specific-user" class="toc-h2 toc-link" data-title="get-a-specific-user">Get a Specific User</a>
+                    <a href="#show-user" class="toc-h2 toc-link" data-title="show-user">Show User</a>
                   </li>
                   <li>
-                    <a href="#2e536466d5" class="toc-h2 toc-link" data-title="">更新用户信息</a>
+                    <a href="#update-user" class="toc-h2 toc-link" data-title="update-user">Update User</a>
                   </li>
               </ul>
           </li>
@@ -256,25 +242,25 @@
             <a href="#products" class="toc-h1 toc-link" data-title="products">Products</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#list" class="toc-h2 toc-link" data-title="list">list</a>
+                    <a href="#list-products" class="toc-h2 toc-link" data-title="list-products">List Products</a>
                   </li>
                   <li>
-                    <a href="#show" class="toc-h2 toc-link" data-title="show">show</a>
+                    <a href="#show-product" class="toc-h2 toc-link" data-title="show-product">Show Product</a>
                   </li>
                   <li>
-                    <a href="#create" class="toc-h2 toc-link" data-title="create">create</a>
+                    <a href="#create-product" class="toc-h2 toc-link" data-title="create-product">Create Product</a>
                   </li>
                   <li>
-                    <a href="#update" class="toc-h2 toc-link" data-title="update">update</a>
+                    <a href="#update-product" class="toc-h2 toc-link" data-title="update-product">Update Product</a>
                   </li>
                   <li>
-                    <a href="#delete" class="toc-h2 toc-link" data-title="delete">delete</a>
+                    <a href="#delete-product" class="toc-h2 toc-link" data-title="delete-product">Delete Product</a>
                   </li>
                   <li>
-                    <a href="#add-image" class="toc-h2 toc-link" data-title="add-image">add image</a>
+                    <a href="#list-product-images" class="toc-h2 toc-link" data-title="list-product-images">List Product Images</a>
                   </li>
                   <li>
-                    <a href="#list-images" class="toc-h2 toc-link" data-title="list-images">list images</a>
+                    <a href="#create-product-image" class="toc-h2 toc-link" data-title="create-product-image">Create Product Image</a>
                   </li>
               </ul>
           </li>
@@ -282,10 +268,21 @@
             <a href="#addresses" class="toc-h1 toc-link" data-title="addresses">Addresses</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#cff9c62934" class="toc-h2 toc-link" data-title="">获取用户的收货地址</a>
+                    <a href="#list-addresses" class="toc-h2 toc-link" data-title="list-addresses">List Addresses</a>
                   </li>
                   <li>
-                    <a href="#957bdd494f" class="toc-h2 toc-link" data-title="">添加地址</a>
+                    <a href="#create-address" class="toc-h2 toc-link" data-title="create-address">Create Address</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="create-order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#list-orders" class="toc-h2 toc-link" data-title="list-orders">List Orders</a>
                   </li>
               </ul>
           </li>
@@ -301,10 +298,6 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the <a href="https://www.talkpal.com">Talkpal</a> API! You can use our API to access Talkpal API endpoints, which can get information on various courses, users, and games.</p>
-
-<p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
 <p>该文档使用 <a href="https://github.com/Talkpal/slate">Slate</a> 生成. 你可以 clone 并编辑你需要的 API 文档.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
@@ -327,150 +320,7 @@ curl <span class="s2">"https://api.talkpal.com/sessions"</span>
 <aside class="notice">
 You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQmI1d2tDS3xMoCKv1Rxg9eVtL28tL7Q</code> with your access token.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='users'>Users</h1><h2 id='get-a-specific-user'>Get a Specific User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/users/2"</span>
+<h1 id='users'>Users</h1><h2 id='show-user'>Show User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/users/2"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -484,8 +334,6 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.talkpal.com/users/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -502,7 +350,8 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the user to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='2e536466d5'>更新用户信息</h2><pre class="highlight shell tab-shell"><code>curl  -X PATCH <span class="s2">"http://api.talkpal.com/users/2"</span>
+<h2 id='update-user'>Update User</h2><pre class="highlight shell tab-shell"><code>curl  -X PATCH <span class="s2">"http://api.talkpal.com/users/1218"</span> <span class="se">\</span>
+  -F <span class="s2">"user[username]=alice"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -511,7 +360,7 @@ Remember — a happy kitten is an authenticated kitten!
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1218</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Talkpal"</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
@@ -520,17 +369,31 @@ Remember — a happy kitten is an authenticated kitten!
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Yes</td>
 <td>The ID of the user to update</td>
 </tr>
 </tbody></table>
-<h1 id='products'>Products</h1><h2 id='list'>list</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/products"</span>
+<h3 id='user-parameters'>User Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>profile_image</td>
+<td>头像</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='list-products'>List Products</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/products"</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -571,7 +434,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint list all products.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.talkpal.com/products</code></p>
-<h2 id='show'>show</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/products/1"</span>
+<h2 id='show-product'>Show Product</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/products/1"</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -579,7 +442,7 @@ Remember — a happy kitten is an authenticated kitten!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toy 101"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
@@ -591,24 +454,38 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint retrieves a specific product.</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>currency 表示产品价格的货币单位，如下：</p>
+
+<table><thead>
+<tr>
+<th>currency</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>RMB</td>
+<td>人民币</td>
+</tr>
+<tr>
+<td>PalPoint</td>
+<td>派点</td>
+</tr>
+</tbody></table>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.talkpal.com/products/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Yes</td>
 <td>The ID of the product to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create'>create</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
+<h2 id='create-product'>Create Product</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
      -F <span class="s2">"product[name]=toy"</span> <span class="se">\</span>
      -F <span class="s2">"product[description]=goodboy"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer TOKEN"</span>
@@ -618,7 +495,7 @@ Remember — a happy kitten is an authenticated kitten!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toy"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"goodboy"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
@@ -642,25 +519,25 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>name</td>
 <td>Yes</td>
-<td>product name</td>
+<td>产品名</td>
 </tr>
 <tr>
 <td>description</td>
 <td>No</td>
-<td>product description</td>
+<td>产品描述</td>
 </tr>
 <tr>
 <td>price</td>
 <td>Yes</td>
-<td>prodct price</td>
+<td>产品价格</td>
 </tr>
 <tr>
 <td>currency</td>
 <td>Yes</td>
-<td>currency</td>
+<td>产品价格单位： PalPoint 或 RMB</td>
 </tr>
 </tbody></table>
-<h2 id='update'>update</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH https://api.talkpal.com/products/1 <span class="se">\</span>
+<h2 id='update-product'>Update Product</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH https://api.talkpal.com/products/1 <span class="se">\</span>
      -F <span class="s2">"product[name]=toy1"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
@@ -669,7 +546,7 @@ Remember — a happy kitten is an authenticated kitten!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toy1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"goodboy"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0"</span><span class="p">,</span><span class="w">
@@ -686,13 +563,11 @@ Remember — a happy kitten is an authenticated kitten!
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Yes</td>
 <td>The ID of the product to retrieve</td>
 </tr>
 </tbody></table>
@@ -725,7 +600,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>currency</td>
 </tr>
 </tbody></table>
-<h2 id='delete'>delete</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"http://api.talkpal.com/products/1"</span>
+<h2 id='delete-product'>Delete Product</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"http://api.talkpal.com/products/1"</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <p>This endpoint delete a specific product.</p>
@@ -735,17 +610,48 @@ Remember — a happy kitten is an authenticated kitten!
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Yes</td>
 <td>The ID of the product to delete</td>
 </tr>
 </tbody></table>
-<h2 id='add-image'>add image</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
+<h2 id='list-product-images'>List Product Images</h2><pre class="highlight shell tab-shell"><code>curl -X GET https://api.talkpal.com/products/1/image <span class="se">\</span>
+     -H <span class="s2">"Authorization: Bearer TOKEN"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funny pig"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"small_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"normal_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint list all images of a product.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.talkpal.com/products/&lt;ProductID&gt;/images</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ProductID</td>
+<td>product ID</td>
+</tr>
+</tbody></table>
+<h2 id='create-product-image'>Create Product Image</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
      -F <span class="s2">"product_image[alt]=Funny"</span> <span class="se">\</span>
      -F <span class="s2">"product_image[attachment]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer TOKEN"</span>
@@ -765,9 +671,9 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint create a product image.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://api.talkpal.com/products/&lt;ProductID&gt;/images</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -800,42 +706,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>file to upload</td>
 </tr>
 </tbody></table>
-<h2 id='list-images'>list images</h2><pre class="highlight shell tab-shell"><code>curl -X GET https://api.talkpal.com/products/1/image <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer TOKEN"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funny pig"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"small_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"normal_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint list all images of a product.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET https://api.talkpal.com/products/&lt;ProductID&gt;/images</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ProductID</td>
-<td>Yes</td>
-<td>product ID</td>
-</tr>
-</tbody></table>
-<h1 id='addresses'>Addresses</h1><h2 id='cff9c62934'>获取用户的收货地址</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/addresses"</span>
+<h1 id='addresses'>Addresses</h1><h2 id='list-addresses'>List Addresses</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/addresses"</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -857,9 +728,11 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre>
+<p>获取用户的收货地址</p>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.talkpal.com/addresses</code></p>
-<h2 id='957bdd494f'>添加地址</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"http://api.talkpal.com/addresses"</span>
+<h2 id='create-address'>Create Address</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"http://api.talkpal.com/addresses"</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -879,7 +752,9 @@ Remember — a happy kitten is an authenticated kitten!
         </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre>
+<p>添加地址</p>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.talkpal.com/address</code></p>
 <h3 id='address-parameters'>Address Parameters</h3>
 <table><thead>
@@ -919,6 +794,46 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>full_name</td>
 <td>联系人姓名</td>
+</tr>
+</tbody></table>
+<h1 id='orders'>Orders</h1><h2 id='create-order'>Create Order</h2>
+<p>下单</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/orders</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product</td>
+<td>产品类型: goods 或 subscription</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>产品 ID</td>
+</tr>
+<tr>
+<td>address_id</td>
+<td>收货地址, 产品类型是 goods 时，该参数必须。</td>
+</tr>
+</tbody></table>
+<h2 id='list-orders'>List Orders</h2>
+<p>获取用户的历史订单</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.talkpal.com/orders</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>产品分类：goods 或者 subscription</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>

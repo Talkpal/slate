@@ -279,6 +279,17 @@
               </ul>
           </li>
           <li>
+            <a href="#addresses" class="toc-h1 toc-link" data-title="addresses">Addresses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cff9c62934" class="toc-h2 toc-link" data-title="">获取用户的收货地址</a>
+                  </li>
+                  <li>
+                    <a href="#957bdd494f" class="toc-h2 toc-link" data-title="">添加地址</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -807,7 +818,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint list a product&#39;images.</p>
+<p>This endpoint list all images of a product.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.talkpal.com/products/&lt;ProductID&gt;/images</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
@@ -822,6 +833,92 @@ Remember — a happy kitten is an authenticated kitten!
 <td>ProductID</td>
 <td>Yes</td>
 <td>product ID</td>
+</tr>
+</tbody></table>
+<h1 id='addresses'>Addresses</h1><h2 id='cff9c62934'>获取用户的收货地址</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/addresses"</span>
+  -H <span class="s2">"Authorization: Bearer TOKEN"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guang dong"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guang zhou"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"line1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guolijun"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.talkpal.com/addresses</code></p>
+<h2 id='957bdd494f'>添加地址</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"http://api.talkpal.com/addresses"</span>
+  -H <span class="s2">"Authorization: Bearer TOKEN"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"广东"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"广州"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"line1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guolijun"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/address</code></p>
+<h3 id='address-parameters'>Address Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>province</td>
+<td>省</td>
+</tr>
+<tr>
+<td>city</td>
+<td>市</td>
+</tr>
+<tr>
+<td>district</td>
+<td>区或县</td>
+</tr>
+<tr>
+<td>street</td>
+<td>街道或乡镇</td>
+</tr>
+<tr>
+<td>line1</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>邮政编码</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>联系人手机号</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>联系人姓名</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>

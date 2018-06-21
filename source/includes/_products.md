@@ -2,7 +2,7 @@
 # Products
 
 
-## list
+## List Products
 
 ```shell
 curl "http://api.talkpal.com/products"
@@ -54,7 +54,7 @@ This endpoint list all products.
 
 
 
-## show
+## Show Product
 
 ```shell
 curl "http://api.talkpal.com/products/1"
@@ -66,7 +66,7 @@ curl "http://api.talkpal.com/products/1"
 ```json
 {
   "data": {
-    "id": 1,
+    	"id": 1,
 		"name": "toy 101",
 		"description": null,
 		"price": "100.0",
@@ -79,7 +79,13 @@ curl "http://api.talkpal.com/products/1"
 
 This endpoint retrieves a specific product.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+currency 表示产品价格的货币单位，如下：
+
+currency | description
+--------------- | -----------------------------------
+RMB 		| 人民币
+PalPoint 	| 派点
+
 
 ### HTTP Request
 
@@ -87,12 +93,12 @@ This endpoint retrieves a specific product.
 
 ### URL Parameters
 
-Parameter | Required | Description
---------- | --------- | -----------
-ID | Yes | The ID of the product to retrieve
+Parameter | Description
+--------- | --------- 
+ID | The ID of the product to retrieve
 
 
-## create
+## Create Product
 
 ```shell
 curl -X POST https://api.talkpal.com/products \
@@ -106,7 +112,7 @@ curl -X POST https://api.talkpal.com/products \
 ```json
 {
   "data": {
-    "id": 1,
+    	"id": 1,
 		"name": "toy",
 		"description": "goodboy",
 		"price": "100.0",
@@ -128,15 +134,15 @@ This endpoint create a product.
 
 Parameter | Required | Description
 --------- | --------- | -----------
-name | Yes | product name
-description | No | product description
-price | Yes | prodct price
-currency | Yes | currency
+name 		| Yes | 产品名
+description | No  | 产品描述
+price 		| Yes | 产品价格
+currency 	| Yes | 产品价格单位： PalPoint 或 RMB
 
 
 
 
-## update
+## Update Product
 
 ```shell
 curl -X PATCH https://api.talkpal.com/products/1 \
@@ -149,7 +155,7 @@ curl -X PATCH https://api.talkpal.com/products/1 \
 ```json
 {
   "data": {
-    "id": 1,
+    	"id": 1,
 		"name": "toy1",
 		"description": "goodboy",
 		"price": "100.0",
@@ -169,9 +175,9 @@ This endpoint update a product.
 
 ### URL Parameters
 
-Parameter | Required | Description
---------- | --------- | -----------
-ID | Yes | The ID of the product to retrieve
+Parameter | Description
+--------- | -----------
+ID | The ID of the product to retrieve
 
 
 ### Product Parameters
@@ -187,7 +193,7 @@ currency | Yes | currency
 
 
 
-## delete
+## Delete Product
 
 ```shell
 curl -X DELETE "http://api.talkpal.com/products/1"
@@ -204,9 +210,9 @@ This endpoint delete a specific product.
 
 ### URL Parameters
 
-Parameter | Required | Description
---------- | --------- | -----------
-ID | Yes | The ID of the product to delete
+Parameter | Description
+--------- | -----------
+ID | The ID of the product to delete
 
 
 
@@ -214,7 +220,47 @@ ID | Yes | The ID of the product to delete
 
 
 
-## add image
+## List Product Images
+
+```shell
+curl -X GET https://api.talkpal.com/products/1/image \
+     -H "Authorization: Bearer TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"data": [
+		{
+			"id": 1,
+			"alt": "Funny pig",
+			"small_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png",
+			"normal_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png",
+			"large_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"
+		}
+	]
+}
+```
+
+This endpoint list all images of a product.
+
+### HTTP Request
+
+`GET https://api.talkpal.com/products/<ProductID>/images`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ProductID | product ID
+
+
+
+
+
+
+## Create Product Image
 
 ```shell
 curl -X POST https://api.talkpal.com/products \
@@ -261,39 +307,3 @@ attachment | Yes | file to upload
 
 
 
-
-
-## list images
-
-```shell
-curl -X GET https://api.talkpal.com/products/1/image \
-     -H "Authorization: Bearer TOKEN"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-	"data": [
-		{
-			"id": 1,
-			"alt": "Funny pig",
-			"small_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png",
-			"normal_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png",
-			"large_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"
-		}
-	]
-}
-```
-
-This endpoint list all images of a product.
-
-### HTTP Request
-
-`GET https://api.talkpal.com/products/<ProductID>/images`
-
-### URL Parameters
-
-Parameter | Required | Description
---------- | --------- | -----------
-ProductID | Yes | product ID

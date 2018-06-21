@@ -1,9 +1,9 @@
 # Users
 
-## Get a Specific User
+## Show User
 
 ```shell
-curl "http://api.talkpal.com/users/2"
+curl "http://api.talkpal.com/users/2" \
   -H "Authorization: Bearer TOKEN"
 ```
 
@@ -20,8 +20,6 @@ curl "http://api.talkpal.com/users/2"
 
 This endpoint retrieves a specific user.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
 `GET https://api.talkpal.com/users/<ID>`
@@ -33,10 +31,11 @@ Parameter | Required | Description
 ID | Yes | The ID of the user to retrieve
 
 
-## 更新用户信息
+## Update User
 
 ```shell
-curl  -X PATCH "http://api.talkpal.com/users/2"
+curl  -X PATCH "http://api.talkpal.com/users/1218" \
+  -F "user[username]=alice" \
   -H "Authorization: Bearer TOKEN"
 ```
 
@@ -46,7 +45,7 @@ curl  -X PATCH "http://api.talkpal.com/users/2"
 {
   "data": {
     "id": 1218,
-    "username": "Talkpal"
+    "username": "alice"
   }
 }
 ```
@@ -57,9 +56,18 @@ curl  -X PATCH "http://api.talkpal.com/users/2"
 
 ### URL Parameters
 
-Parameter | Required | Description
---------- | --------- | -----------
-ID | Yes | The ID of the user to update
+Parameter | Description
+--------- | ---------
+ID        | The ID of the user to update
+
+### User Parameters
+
+Parameter | Description
+--------- | --------- 
+username  | 用户名
+profile_image | 头像
+
+
 
 
 

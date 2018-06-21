@@ -1,6 +1,6 @@
 # Addresses
 
-## 获取用户的收货地址
+## List Addresses
 
 ```shell
 curl "http://api.talkpal.com/addresses"
@@ -28,6 +28,8 @@ curl "http://api.talkpal.com/addresses"
 }
 ```
 
+获取用户的收货地址
+
 ### HTTP Request
 
 `GET https://api.talkpal.com/addresses`
@@ -35,7 +37,7 @@ curl "http://api.talkpal.com/addresses"
 
 
 
-## 添加地址
+## Create Address
 
 ```shell
 curl -X POST "http://api.talkpal.com/addresses"
@@ -61,6 +63,8 @@ curl -X POST "http://api.talkpal.com/addresses"
 }
 ```
 
+添加地址
+
 
 ### HTTP Request
 
@@ -68,13 +72,13 @@ curl -X POST "http://api.talkpal.com/addresses"
 
 ### Address Parameters
 
-Parameter | Description
---------- | -----------
-province  |    省
-city	|	      市
-district |	    区或县
-street	|	    街道或乡镇
-line1	|	      地址
-postal_code	|  邮政编码
+Parameter    | Description
+------------ | -----------
+province     | 省
+city	     | 市
+district     | 区或县
+street	     | 街道或乡镇
+line1	     | 地址
+postal_code	 | 邮政编码
 phone_number | 联系人手机号
-full_name |  联系人姓名
+full_name    | 联系人姓名

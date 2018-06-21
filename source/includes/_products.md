@@ -286,7 +286,7 @@ curl -X GET https://api.talkpal.com/products/1/image \
 }
 ```
 
-This endpoint list a product'images.
+This endpoint list all images of a product.
 
 ### HTTP Request
 

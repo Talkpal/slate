@@ -15,6 +15,7 @@ toc_footers:
 includes:
     - users
     - products
+    - addresses
     - errors
 
 search: true

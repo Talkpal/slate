@@ -234,7 +234,7 @@ curl -X GET https://api.talkpal.com/products/1/image \
 	"data": [
 		{
 			"id": 1,
-			"alt": "Funny pig",
+			"caption": "Funny pig",
 			"small_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png",
 			"normal_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png",
 			"large_url": "http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"
@@ -264,8 +264,8 @@ ProductID | product ID
 
 ```shell
 curl -X POST https://api.talkpal.com/products \
-     -F "product_image[alt]=Funny" \
-     -F "product_image[attachment]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg" \
+     -F "image[caption]=Funny" \
+     -F "image[attachment]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg" \
      -H "Authorization: Bearer TOKEN"
 ```
 
@@ -300,7 +300,7 @@ ProductID | Yes | product ID
 
 Parameter | Required | Description
 --------- | --------- | -----------
-alt | No | alternative text
+caption | No | caption
 attachment | Yes | file to upload
 
 

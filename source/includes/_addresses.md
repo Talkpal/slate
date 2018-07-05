@@ -68,7 +68,7 @@ curl -X POST "http://api.talkpal.com/addresses"
 
 ### HTTP Request
 
-`POST https://api.talkpal.com/address`
+`POST https://api.talkpal.com/addresses`
 
 ### Address Parameters
 

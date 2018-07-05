@@ -628,7 +628,7 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funny pig"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funny pig"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"small_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTVRBd2VERXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b6d0bf94dbc07dd002d54da460e24210143911a7/170.png"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"normal_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTWpRd2VESTBNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b0eea37a6c03f6c4a139066d0e0dcb63cebdb901/170.png"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1a6055009a4c9e3a3927170f6cc8ccbb24bcb419/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lOTmpBd2VEWXdNRDRHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2dee6e9af6e3b61f113bd88daa15bc0bce3bd2d8/170.png"</span><span class="w">
@@ -652,8 +652,8 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
 </tr>
 </tbody></table>
 <h2 id='create-product-image'>Create Product Image</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/products <span class="se">\</span>
-     -F <span class="s2">"product_image[alt]=Funny"</span> <span class="se">\</span>
-     -F <span class="s2">"product_image[attachment]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg"</span> <span class="se">\</span>
+     -F <span class="s2">"image[caption]=Funny"</span> <span class="se">\</span>
+     -F <span class="s2">"image[attachment]=@/Users/cj/Desktop/5vvyo4u8y8wz.jpg"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -696,9 +696,9 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
 </tr>
 </thead><tbody>
 <tr>
-<td>alt</td>
+<td>caption</td>
 <td>No</td>
-<td>alternative text</td>
+<td>caption</td>
 </tr>
 <tr>
 <td>attachment</td>
@@ -755,7 +755,7 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
 </span></code></pre>
 <p>添加地址</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://api.talkpal.com/address</code></p>
+<p><code>POST https://api.talkpal.com/addresses</code></p>
 <h3 id='address-parameters'>Address Parameters</h3>
 <table><thead>
 <tr>

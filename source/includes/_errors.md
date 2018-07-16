@@ -48,7 +48,7 @@ curl -X POST "http://api.talkpal.com/users"
     {
       "resource": "User",
       "field": "username",
-      "code": "cant_be_blank"
+      "code": "blank"
     }
   ]
 }

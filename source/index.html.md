@@ -27,7 +27,8 @@ search: true
 该文档使用 [Slate](https://github.com/Talkpal/slate) 生成. 你可以 clone 并编辑你需要的 API 文档.
 
 # Scheme
-所有成功的请求返回的数据都在 data 字段里.
+所有 Response 最顶层永远是 JSON 对象 { ... }.
+所有成功请求的资源都在 data 字段里.
 > 例如请求某用户的用户信息
 
 ```json

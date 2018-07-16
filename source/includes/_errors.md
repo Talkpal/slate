@@ -1,8 +1,16 @@
 # Errors
 
+Response 最顶层的 JSON 对象里有些字段是错误信息.
+
+Field   | Description
+------- | ---------------
+message | 用于显示给用户.
+code    | 错误代码,不可变.
+errors  | [字段错误](#字段错误)
+
+
 ## 常见错误
-客户端在 API 调用出错时会收到的JSON对象里包含了 message 和 code 两个错误相关的字段.
-message 用来提示 API 调用者; code 用来标识错误.
+客户端使用过程中出现的几类错误.
 
 > 下面的请求将会出错,不存在ID是0的用户.
 
@@ -14,16 +22,13 @@ curl "http://api.talkpal.com/users/0"
 {"message": "Not found", "code": "not_found"}
 ```
 
-
-
-
 Code | Message | Status | Description
 ---- | ------- | ---------------- | ----------
 not_found           | Not found                   | 404 | 未找到请求的资源,通常是因为提供了错误的ID.
 not_authenticated   | Not authenticated           | 401 | 用户身份验证失败,通常是提供了错误的 token 
 not_authorized      | Not authorized              | 403 | 没有权限访问该资源
 token_expired       | The access token expired    | 401 | token 已过期
-verification_failed | Incorrect verification code | 403 | 手机验证码验证失败
+verification_failed | Incorrect verification code | 403 | 错误的短信验证码
 
 ## 字段错误
 在创建或更新资源时提供了无效的字段

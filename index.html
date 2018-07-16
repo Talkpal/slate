@@ -314,7 +314,8 @@
         <h1 id='introduction'>Introduction</h1>
 <p>该文档使用 <a href="https://github.com/Talkpal/slate">Slate</a> 生成. 你可以 clone 并编辑你需要的 API 文档.</p>
 <h1 id='scheme'>Scheme</h1>
-<p>所有成功的请求返回的数据都在 data 字段里.</p>
+<p>所有 Response 最顶层永远是 JSON 对象 { ... }.
+所有成功请求的资源都在 data 字段里.</p>
 
 <blockquote>
 <p>例如请求某用户的用户信息</p>
@@ -358,9 +359,30 @@ curl <span class="s2">"https://api.talkpal.com/sessions"</span>
 <aside class="notice">
 You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQmI1d2tDS3xMoCKv1Rxg9eVtL28tL7Q</code> with your access token.
 </aside>
-<h1 id='errors'>Errors</h1><h2 id='94d3817527'>常见错误</h2>
-<p>客户端在 API 调用出错时会收到的JSON对象里包含了 message 和 code 两个错误相关的字段.
-message 用来提示 API 调用者; code 用来标识错误.</p>
+<h1 id='errors'>Errors</h1>
+<p>Response 最顶层的 JSON 对象里有些字段是错误信息.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>用于显示给用户.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>错误代码,不可变.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td><a href="#字段错误">字段错误</a></td>
+</tr>
+</tbody></table>
+<h2 id='94d3817527'>常见错误</h2>
+<p>客户端使用过程中出现的几类错误.</p>
 
 <blockquote>
 <p>下面的请求将会出错,不存在ID是0的用户.</p>
@@ -404,7 +426,7 @@ message 用来提示 API 调用者; code 用来标识错误.</p>
 <td>verification_failed</td>
 <td>Incorrect verification code</td>
 <td>403</td>
-<td>手机验证码验证失败</td>
+<td>错误的短信验证码</td>
 </tr>
 </tbody></table>
 <h2 id='a7290f7c63'>字段错误</h2>

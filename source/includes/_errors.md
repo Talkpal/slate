@@ -22,10 +22,10 @@ Code | Message | Status | Description
 not_found           | Not found                   | 404 | 未找到请求的资源,通常是因为提供了错误的ID.
 not_authenticated   | Not authenticated           | 401 | 用户身份验证失败,通常是提供了错误的 token 
 not_authorized      | Not authorized              | 403 | 没有权限访问该资源
-token_expired       | The access token expired    | 401 |  token 已过期
+token_expired       | The access token expired    | 401 | token 已过期
 verification_failed | Incorrect verification code | 403 | 手机验证码验证失败
 
-## 无效的字段
+## 字段错误
 在创建或更新资源时提供了无效的字段
 
 HTTP Status: 422 Unprocessable Entity
@@ -51,7 +51,7 @@ curl -X POST "http://api.talkpal.com/users"
 
 Code          | Description
 ------------- | -------------
-cant_be_blank | 字段不能未空
+blank         | 字段不能为空
 taken         | 该字段的值已经被占用
 invalid       | 无效的数据类型
 

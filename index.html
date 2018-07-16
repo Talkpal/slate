@@ -225,7 +225,24 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
+            <a href="#scheme" class="toc-h1 toc-link" data-title="scheme">Scheme</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#94d3817527" class="toc-h2 toc-link" data-title="">常见错误</a>
+                  </li>
+                  <li>
+                    <a href="#3670a9d821" class="toc-h2 toc-link" data-title="">无效的字段</a>
+                  </li>
+                  <li>
+                    <a href="#d8c2a7df5f" class="toc-h2 toc-link" data-title="">其他错误</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#users" class="toc-h1 toc-link" data-title="users">Users</a>
@@ -286,9 +303,6 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
-          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://www.talkpal.com'>Home</a></li>
@@ -299,6 +313,30 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>该文档使用 <a href="https://github.com/Talkpal/slate">Slate</a> 生成. 你可以 clone 并编辑你需要的 API 文档.</p>
+<h1 id='scheme'>Scheme</h1>
+<p>所有成功的请求返回的数据都在 data 字段里.</p>
+
+<blockquote>
+<p>例如请求某用户的用户信息</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zoe"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>或者请求课程列表</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3942</span><span class="p">,</span><span class="w"> </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"跟Jeff老师学绘画"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3942</span><span class="p">,</span><span class="w"> </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"跟Mike老师学音乐"</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>请求出错时参考 <a href="#errors">Errors</a></p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -320,7 +358,104 @@ curl <span class="s2">"https://api.talkpal.com/sessions"</span>
 <aside class="notice">
 You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQmI1d2tDS3xMoCKv1Rxg9eVtL28tL7Q</code> with your access token.
 </aside>
-<h1 id='users'>Users</h1><h2 id='show-user'>Show User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/users/2"</span> <span class="se">\</span>
+<h1 id='errors'>Errors</h1><h2 id='94d3817527'>常见错误</h2>
+<p>客户端在 API 调用出错时会收到的JSON对象里包含了 message 和 code 两个错误相关的字段.
+message 用来提示 API 调用者; code 用来标识错误.</p>
+
+<blockquote>
+<p>下面的请求将会出错,不存在ID是0的用户.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/users/0"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="p">,</span><span class="w"> </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_found"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>not_found</td>
+<td>Not found</td>
+<td>404</td>
+<td>未找到请求的资源,通常是因为提供了错误的ID.</td>
+</tr>
+<tr>
+<td>not_authenticated</td>
+<td>Not authenticated</td>
+<td>401</td>
+<td>用户身份验证失败,通常是提供了错误的 token</td>
+</tr>
+<tr>
+<td>not_authorized</td>
+<td>Not authorized</td>
+<td>403</td>
+<td>没有权限访问该资源</td>
+</tr>
+<tr>
+<td>token_expired</td>
+<td>The access token expired</td>
+<td>401</td>
+<td>token 已过期</td>
+</tr>
+<tr>
+<td>verification_failed</td>
+<td>Incorrect verification code</td>
+<td>403</td>
+<td>手机验证码验证失败</td>
+</tr>
+</tbody></table>
+<h2 id='3670a9d821'>无效的字段</h2>
+<p>在创建或更新资源时提供了无效的字段</p>
+
+<p>HTTP Status: 422 Unprocessable Entity</p>
+
+<blockquote>
+<p>创建用户是未填写用户名</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"http://api.talkpal.com/users"</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation Failed"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cant_be_blank"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cant_be_blank</td>
+<td>字段不能未空</td>
+</tr>
+<tr>
+<td>taken</td>
+<td>该字段的值已经被占用</td>
+</tr>
+<tr>
+<td>invalid</td>
+<td>无效的数据类型</td>
+</tr>
+</tbody></table>
+
+<p>以上字段错误还不完全,待补充.</p>
+<h2 id='d8c2a7df5f'>其他错误</h2>
+<p>当前还有一些在特定的情况下产生的错误,等同于<a href="#常见错误">常见错误</a>但是还没确定 code, 或者会在后续解决掉的错误.</p>
+
+<blockquote>
+<p>例如: 每日登录奖励已经领取过了</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The bonus has been taken away"</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='users'>Users</h1><h2 id='show-user'>Show User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.talkpal.com/users/2"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer TOKEN"</span>
 </code></pre>
 <blockquote>
@@ -834,64 +969,6 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
 <tr>
 <td>category</td>
 <td>产品分类：goods 或者 subscription</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 

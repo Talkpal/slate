@@ -237,7 +237,7 @@
                     <a href="#94d3817527" class="toc-h2 toc-link" data-title="">常见错误</a>
                   </li>
                   <li>
-                    <a href="#3670a9d821" class="toc-h2 toc-link" data-title="">无效的字段</a>
+                    <a href="#a7290f7c63" class="toc-h2 toc-link" data-title="">字段错误</a>
                   </li>
                   <li>
                     <a href="#d8c2a7df5f" class="toc-h2 toc-link" data-title="">其他错误</a>
@@ -407,7 +407,7 @@ message 用来提示 API 调用者; code 用来标识错误.</p>
 <td>手机验证码验证失败</td>
 </tr>
 </tbody></table>
-<h2 id='3670a9d821'>无效的字段</h2>
+<h2 id='a7290f7c63'>字段错误</h2>
 <p>在创建或更新资源时提供了无效的字段</p>
 
 <p>HTTP Status: 422 Unprocessable Entity</p>
@@ -434,8 +434,8 @@ message 用来提示 API 调用者; code 用来标识错误.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>cant_be_blank</td>
-<td>字段不能未空</td>
+<td>blank</td>
+<td>字段不能为空</td>
 </tr>
 <tr>
 <td>taken</td>

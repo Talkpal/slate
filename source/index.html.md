@@ -13,11 +13,11 @@ toc_footers:
   #- <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-    - users
-    - products
-    - addresses
-    - orders
-    - errors
+  - errors
+  - users
+  - products
+  - addresses
+  - orders
 
 search: true
 ---
@@ -26,6 +26,31 @@ search: true
 
 该文档使用 [Slate](https://github.com/Talkpal/slate) 生成. 你可以 clone 并编辑你需要的 API 文档.
 
+# Scheme
+所有成功的请求返回的数据都在 data 字段里.
+> 例如请求某用户的用户信息
+
+```json
+{
+  "data": {
+    "id": 98,
+    "username": "Zoe"
+  }
+}
+```
+
+> 或者请求课程列表
+
+```json
+{
+  "data" [
+    {"id": 3942, "title": "跟Jeff老师学绘画"},
+    {"id": 3942, "title": "跟Mike老师学音乐"}
+  ]
+}
+```
+
+请求出错时参考 [Errors](#errors)
 
 # Authentication
 

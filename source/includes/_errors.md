@@ -1,22 +1,68 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+## 常见错误
+客户端在 API 调用出错时会收到的JSON对象里包含了 message 和 code 两个错误相关的字段.
+message 用来提示 API 调用者; code 用来标识错误.
 
-The Kittn API uses the following error codes:
+> 下面的请求将会出错,不存在ID是0的用户.
+
+```shell
+curl "http://api.talkpal.com/users/0"
+```
+
+```json
+{"message": "Not found", "code": "not_found"}
+```
 
 
-Error Code | Meaning
----------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+
+Code | Message | Status | Description
+---- | ------- | ---------------- | ----------
+not_found           | Not found                   | 404 | 未找到请求的资源,通常是因为提供了错误的ID.
+not_authenticated   | Not authenticated           | 401 | 用户身份验证失败,通常是提供了错误的 token 
+not_authorized      | Not authorized              | 403 | 没有权限访问该资源
+token_expired       | The access token expired    | 401 |  token 已过期
+verification_failed | Incorrect verification code | 403 | 手机验证码验证失败
+
+## 无效的字段
+在创建或更新资源时提供了无效的字段
+
+HTTP Status: 422 Unprocessable Entity
+
+> 创建用户是未填写用户名
+
+```shell
+curl -X POST "http://api.talkpal.com/users"
+```
+
+```json
+{
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "User",
+      "field": "username",
+      "code": "cant_be_blank"
+    }
+  ]
+}
+```
+
+Code          | Description
+------------- | -------------
+cant_be_blank | 字段不能未空
+taken         | 该字段的值已经被占用
+invalid       | 无效的数据类型
+
+以上字段错误还不完全,待补充.
+
+## 其他错误
+当前还有一些在特定的情况下产生的错误,等同于[常见错误](#常见错误)但是还没确定 code, 或者会在后续解决掉的错误.
+
+
+> 例如: 每日登录奖励已经领取过了
+
+```json
+{"message": "The bonus has been taken away"}
+```

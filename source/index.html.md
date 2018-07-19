@@ -18,6 +18,7 @@ includes:
   - products
   - addresses
   - orders
+  - word_guessing
 
 search: true
 ---

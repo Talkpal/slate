@@ -303,6 +303,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#37f0d6220b" class="toc-h1 toc-link" data-title="">你说我猜</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#query" class="toc-h2 toc-link" data-title="query">query</a>
+                  </li>
+              </ul>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://www.talkpal.com'>Home</a></li>
@@ -993,7 +1001,31 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
 <td>产品分类：goods 或者 subscription</td>
 </tr>
 </tbody></table>
+<h1 id='37f0d6220b'>你说我猜</h1>
+<p>通过连接 WordGuessing::RoomChannel 和服务器实时通信。</p>
 
+<p>channel 有两个内置的方法 subscribe 和 unsubscribe,可以订阅和取消订阅一个房间的消息.</p>
+
+<p>在该channel上执行action向服务器发送消息。</p>
+<h2 id='query'>query</h2>
+<p>query(parameters)</p>
+
+<p>parameters: { &quot;query&quot;: &quot;<target>&quot;, &quot;query_id&quot;: 1 }</p>
+
+<p>target 为要查询的目标, 目前仅支持 viewers</p>
+
+<p>query_id 为客户端生成的id,服务器原样返回,客户端可以用来查找回调handler.</p>
+
+<blockquote>
+<p>query({&quot;query&quot;: &quot;viewers&quot;, &quot;query_id&quot;: 34})</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"result"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"query_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"viewers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="s2">"username"</span><span class="p">,</span><span class="w"> </span><span class="s2">"zoe"</span><span class="p">}}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">

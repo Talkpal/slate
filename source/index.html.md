@@ -19,6 +19,8 @@ includes:
   - addresses
   - orders
   - word_guessing
+  - authorize
+  - register
 
 search: true
 ---

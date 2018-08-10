@@ -311,6 +311,28 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#authorize" class="toc-h1 toc-link" data-title="authorize">Authorize</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#8c6ceff231" class="toc-h2 toc-link" data-title="">获取短信验证码</a>
+                  </li>
+                  <li>
+                    <a href="#58155155a9" class="toc-h2 toc-link" data-title="">校验短信验证码</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#register" class="toc-h1 toc-link" data-title="register">Register</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#85fb1b8dc7" class="toc-h2 toc-link" data-title="">通过微信注册</a>
+                  </li>
+                  <li>
+                    <a href="#97ed29f011" class="toc-h2 toc-link" data-title="">通过手机号码注册</a>
+                  </li>
+              </ul>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://www.talkpal.com'>Home</a></li>
@@ -1025,7 +1047,213 @@ You must replace <code>rNSpfeA_rEv8Tx6n1dnbZ_Uzv8ZA2LLoaeBduj3JGiTeU3ADCkY5AUhQm
     </span><span class="s2">"query_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
     </span><span class="s2">"viewers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="s2">"username"</span><span class="p">,</span><span class="w"> </span><span class="s2">"zoe"</span><span class="p">}}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre><h1 id='authorize'>Authorize</h1><h2 id='8c6ceff231'>获取短信验证码</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/verifications <span class="se">\</span>
+     -F <span class="s2">"verification[phone_number]=+8618888888888"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/verifications</code></p>
+<h3 id='verifications-parameters'>Verifications Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>phone_number</td>
+<td>Yes</td>
+<td>手机号码</td>
+</tr>
+</tbody></table>
+<h2 id='58155155a9'>校验短信验证码</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/verifications/1/check <span class="se">\</span>
+     -F <span class="s2">"verification[pin]=123456"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/verifications/&lt;ID&gt;/check</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>短信验证码id</td>
+</tr>
+</tbody></table>
+<h3 id='verifications-parameters-2'>Verifications Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pin</td>
+<td>Yes</td>
+<td>验证码</td>
+</tr>
+</tbody></table>
+<h1 id='register'>Register</h1><h2 id='85fb1b8dc7'>通过微信注册</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/sessions <span class="se">\</span>
+      -F <span class="s2">"session[wechat][city]=Guangzhou"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][unionid]=oWVF2t-0aBLooUTvlyaGgp61NEDk"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][openid]=oTIedwO2iQOlX8sQYw_GhMf7cJjo"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][nickname]=Chakery"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][language]=zh_CN"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][province]=Guangdong"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][sex]=1"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat][country]=CN"</span> <span class="se">\</span>
+      -F <span class="s2">"session[wechat[headimgurl]=http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwG"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/sessions</code></p>
+<h3 id='session-parameters'>Session Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wechat</td>
+<td>Yes</td>
+<td>微信的用户信息</td>
+</tr>
+</tbody></table>
+<h3 id='wechat-parameters'>Wechat Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>city</td>
+<td>城市</td>
+</tr>
+<tr>
+<td>unionid</td>
+<td>unionid</td>
+</tr>
+<tr>
+<td>openid</td>
+<td>openid</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td>language</td>
+<td>语言</td>
+</tr>
+<tr>
+<td>province</td>
+<td>省份</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>country</td>
+<td>国家</td>
+</tr>
+<tr>
+<td>headimgurl</td>
+<td>头像地址</td>
+</tr>
+</tbody></table>
+<h2 id='97ed29f011'>通过手机号码注册</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://api.talkpal.com/users <span class="se">\</span>
+      -F <span class="s2">"user[profile_image]=xxxx.png"</span> <span class="se">\</span>
+      -F <span class="s2">"user[phone_number]=+8618888888888"</span> <span class="se">\</span>
+      -F <span class="s2">"user[pin]=123456"</span> <span class="se">\</span>
+      -F <span class="s2">"user[username]=chakery"</span> <span class="se">\</span>
+      -F <span class="s2">"user[gender]=male"</span> <span class="se">\</span>
+      -F <span class="s2">"user[birthday]=2018-08-10 16:06:02"</span> <span class="se">\</span>
+      -F <span class="s2">"user[channel]=AppStore"</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.talkpal.com/users</code></p>
+<h3 id='user-parameters'>User Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>profile_image</td>
+<td>No</td>
+<td>头像图片</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>Yes</td>
+<td>手机号码</td>
+</tr>
+<tr>
+<td>pin</td>
+<td>Yes</td>
+<td>短信验证码</td>
+</tr>
+<tr>
+<td>username</td>
+<td>Yes</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>No</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>No</td>
+<td>出生日期</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>Yes</td>
+<td>用户注册的渠道</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
